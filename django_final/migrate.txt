@@ -1,0 +1,9 @@
+BEGIN;
+--
+-- Add field counter to surveyquestion
+--
+ALTER TABLE "survey_surveyquestion" RENAME TO "survey_surveyquestion__old";
+CREATE TABLE "survey_surveyquestion" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "counter" integer NOT NULL, "respondent" varchar(100) NOT NULL);
+INSERT INTO "survey_surveyquestion" ("id", "respondent", "counter") SELECT "id", "respondent", 5 FROM "survey_surveyquestion__old";
+DROP TABLE "survey_surveyquestion__old";
+COMMIT;

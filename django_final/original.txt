@@ -1,0 +1,6 @@
+BEGIN;
+--
+-- Create model SurveyQUestion
+--
+CREATE TABLE "survey_surveyquestion" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "respondent" varchar(100) NOT NULL);
+COMMIT;
